@@ -3,5 +3,5 @@ requests==2.32.3
 jsonify==0.5
 pillow==10.4.0
 --find-links https://download.pytorch.org/whl/torch_stable.html
-torch==2.2.0+cpu
+torch==2.2.0
 diffusers==0.30.3
