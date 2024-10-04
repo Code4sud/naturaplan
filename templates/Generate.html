@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Génération d'Images</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/output.css') }}">
+    
+
+
+</head>
+<body>
+    <header class="NameSite">
+        <img src="{{ url_for('static', filename='images/test2.png') }}" alt="Logo">
+            <h1>NaturaPlan</h1>
+    </header>
+
+    <main class="Container">
+        <section class="Slogan">
+    <form action="/generate" method="POST" id="imageForm" enctype="multipart/form-data" class="form-container">
+        <div class="form-group">
+        <label for="image" class="label">
+            Téléchargez une image
+        </label>
+        <div class="file-upload-container">
+            <div class="file-upload">
+            <div class="upload-icon">
+                <i class="fa-solid fa-download fa-xl"></i>
+            </div>
+            <div class="file-text">
+                <label for="image" class="file-label">
+                <span>Télécharger un fichier</span>
+                <input type="file" id="image" name="image" accept="image/*" required class="file-input" />
+                </label>
+                <p class="file-instructions">ou glissez-déposez</p>
+            </div>
+            <p class="file-size">PNG, JPG, GIF jusqu'à 10MB</p>
+            </div>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <label for="prompt" class="label">
+            Description
+        </label>
+        <textarea id="prompt" name="prompt" class="textarea" placeholder="Décrivez le paysage que vous souhaitez générer..."></textarea>
+        </div>
+
+        <div class="button-container">
+        <button type="submit" class="submit-button">
+            Générer le paysage
+        </button>
+        </div>
+    </form>            <!-- <form  class="SloganText" action="/generate" method="POST" id="imageForm" enctype="multipart/form-data">
+                    <section class="Titres">
+                    <label for="image">Télécharger une image :</label> -->
+                    <!-- <input type="file" id="image" name="image" accept="image/*" required><br><br>
+                    <input type="text" id="prompt" name="prompt" placeholder="Entrez votre prompt">
+                </section> -->
+                <!-- <section class="Btn">
+                    <button type="submit">Générer l'image</button>
+                </section> -->
+            <!-- </form> -->
+        </section>
+        
+        <section class="Images">
+            <h2>Résultat :</h2>
+            <img id="resultImage" src="" alt="Image générée" >
+        </section>        
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            
+            <!-- Section logo et description -->
+            <div class="footer-section">
+              <h3 class="footer-logo">
+                <i class="fas fa-leaf"></i> <!-- Icône Leaf -->
+                GreenScape AI
+              </h3>
+              <p>Transformez vos espaces verts avec l'intelligence artificielle.</p>
+            </div>
+    
+            <!-- Section liens rapides -->
+            <div class="footer-section">
+              <h4>Liens rapides</h4>
+              <ul class="footer-links">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/generator">Générer un environnement</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+    
+            <!-- Section réseaux sociaux -->
+            <div class="footer-section">
+              <h4>Suivez-nous</h4>
+              <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+    
+          </div>
+    
+          <!-- Section copyright -->
+          <div class="footer-bottom">
+            <p>&copy; 2024 GreenScape AI. Tous droits réservés.</p>
+          </div>
+        </div>
+      </footer>
+
+
+
+
+    <script>
+        document.getElementById('imageForm').onsubmit = async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const response = await fetch('/generate', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                const jsonResponse = await response.json();
+                const resultImage = document.getElementById('resultImage');
+                resultImage.src = jsonResponse.image_path;
+                resultImage.style.display = 'block';
+            } else {
+                const errorResponse = await response.json();
+                alert('Erreur : ' + errorResponse.error);
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBS</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+<body>
+    <header class="NameSite">
+        <img src="{{ url_for('static', filename='images/test2.png') }}" alt="Logo">
+            <h1>NaturaPlan</h1>
+    </header>
+    <main class="Container">
+        <section class="Titre">
+            <p>Bienvenue sur NaturaPlan, un Générateur de Solutions Basées sur la Nature, un outil innovant conçu pour les paysagistes et urbanistes. </p>
+        </section>
+        
+        <section class="Images">
+            <img src="{{ url_for('static', filename='images/test.png') }}" alt="Logo">
+            <img src="{{ url_for('static', filename='images/generated_image.png') }}" alt="Logo">
+            <!-- <img src="./Image/2022-rue-montpelaz.png" alt="">
+            <img src="./Image/generated_image.png" alt=""> -->
+        </section>
+
+        <section class="Slogan">
+            <article class="SloganText">
+                <p>Notre <strong>générateur</strong> vous offre des propositions d'aménagement urbain qui intègrent des solutions naturelles adaptées aux contraintes spécifiques de chaque site. En prenant en compte les données de biodiversité locale et les objectifs d'aménagement, notre outil suggère des plans incluant des éléments tels que des murs végétaux, des toits verts, des zones humides, et des corridors écologiques. Optimisez vos projets en alliant nature et urbanisme durable avec des NBS personnalisées !</p>
+                <section class="Btn">
+                    <a href="GetImage">Générer une image</a>
+                </section>
+            </article>
+        </section>
+        
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            
+            <!-- Section logo et description -->
+            <div class="footer-section">
+              <h3 class="footer-logo">
+                <i class="fas fa-leaf"></i> <!-- Icône Leaf -->
+                GreenScape AI
+              </h3>
+              <p>Transformez vos espaces verts avec l'intelligence artificielle.</p>
+            </div>
+    
+            <!-- Section liens rapides -->
+            <div class="footer-section">
+              <h4>Liens rapides</h4>
+              <ul class="footer-links">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/generator">Générer un environnement</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+    
+            <!-- Section réseaux sociaux -->
+            <div class="footer-section">
+              <h4>Suivez-nous</h4>
+              <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+    
+          </div>
+    
+          <!-- Section copyright -->
+          <div class="footer-bottom">
+            <p>&copy; 2024 GreenScape AI. Tous droits réservés.</p>
+          </div>
+        </div>
+      </footer>
+</body>
+</html>

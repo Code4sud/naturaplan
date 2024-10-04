@@ -1,0 +1,329 @@
+/* Font titre */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* Font texte */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-image: url("/static/images/sanstitre4.png");
+    background-repeat: repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+.NameSite  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.NameSite img {
+width: 10%;}
+
+
+.NameSite h1 {
+    color: #bc4749;
+    font-family: "Roboto Mono", monospace;
+    margin:0 36% 0 0;
+    font-size: 4em;}
+
+/* Connexion */
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Titre {
+    display: flex;
+    justify-content: center;
+    padding: 0 4% 2% 4%;
+    font-family: "Roboto Mono", monospace;
+
+}
+.Titres {
+    display: flex;
+    font-family: "Roboto Mono", monospace;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 1.5em;
+    margin-bottom: 3%;
+}
+
+.Titre p{
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.5em;
+    text-align: center;
+
+}
+
+#resultImage {
+    display: none;
+}
+
+.Slogan {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 3%;
+}
+
+.Images {
+    background-color: white;
+    display: flex;
+    padding-right: 5%;
+    width: 80%;
+    padding: 2%;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 2px 16px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 2px 16px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 2px 16px 0px rgba(0, 0, 0, 0.75);
+    justify-content: space-evenly;
+    box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.75);
+    font-family: "Roboto Mono", monospace;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.Images img {
+    width: 37%;
+}
+
+
+.SloganText {
+    background-color: white;
+    /* background-image: url("/static/images/sanstitre4.png"); background-repeat: repeat;  */
+    display: flex;
+    flex-direction: column;
+    padding-right: 5%;
+    margin: 0 0 4% 0;
+    width: 80%;
+    padding: 2%;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 2px 16px 0px rgba(0,0,0,0.75);
+}
+
+.SloganText p {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.Btn {
+    background-color: #bc4749;
+    height: 4em;
+    margin-left: 31%;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    width: 36%;
+    justify-content: center;
+    border-radius: 2px;
+}
+
+.Btn a {
+    text-decoration: none;
+    color: white;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.3em;
+}
+
+.Btn button {
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    color: white;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.3em;
+}
+
+
+
+.form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    display: block;
+    color: #333333;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .file-upload-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    border: 2px dashed #cccccc;
+    border-radius: 5px;
+  }
+  
+  .file-upload {
+    text-align: center;
+  }
+  
+  
+  .file-label {
+    display: inline-block;
+    cursor: pointer;
+    color: #38a169;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none; }
+  
+  .file-input {
+    display: none;
+  }
+  
+  .file-instructions {
+    display: inline;
+    color: #666666;
+  }
+  
+  .file-size {
+    font-size: 12px;
+    color: #999999;
+    margin-top: 10px;
+  }
+  
+  .textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333333;
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
+  
+  .submit-button {
+    background-color: #38a169;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #2f855a;
+  }
+
+  footer {
+    background-color: #22543d; /* Couleur émeraude foncée */
+    color: white;
+    padding: 2% 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-section {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .footer-section h3, .footer-section h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-logo i {
+    margin-right: 10px;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #81e6d9; /* Couleur émeraude plus claire */
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #81e6d9;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid white;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  /* Styles pour les tailles d'écran plus larges */
+  @media (min-width: 768px) {
+    .footer-content {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    .footer-section {
+      text-align: left;
+    }
+  }
+
